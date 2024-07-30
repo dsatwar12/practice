@@ -1,0 +1,1 @@
+console.log("hello im trnd way to speak to u")
