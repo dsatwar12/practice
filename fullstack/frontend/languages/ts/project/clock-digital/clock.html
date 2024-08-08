@@ -13,7 +13,21 @@
     </center>
 <script>
    let div= document.getElementById('root')
-   div.innerHTML=`hours:0--munites:0--sec:0`
+   let sec=0
+   let munite=0
+   let hours=0
+   setInterval(()=>{
+    div.innerHTML=`hours:${hours}--munites:${munite}--sec:${ sec++}`
+    if(sec==10){
+        munite++
+        sec=0
+    }
+    if( munite==2){
+        munite=0
+        hours++
+    }
+
+   },1000)
 </script>
 
 </body>
