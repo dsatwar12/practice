@@ -4,7 +4,7 @@ import './login.css'
 import { Link } from "react-router-dom"
 
 
-export const Login=()=>{
+export const Register=()=>{
     return <div className="container1">
        <Paper style={{padding:'200px'}}>
         <Grid
@@ -13,7 +13,9 @@ export const Login=()=>{
   justifyContent="center"
   alignItems="center"
 >
-    <h1>login page</h1>
+    <h1>Register page</h1>
+    <TextField id="outlined-basic" label="name" variant="outlined" />
+    <br />
     <TextField id="outlined-basic" label="email" variant="outlined" />
     <br />
     <TextField id="outlined-basic" label="password" variant="outlined" />
@@ -26,13 +28,9 @@ export const Login=()=>{
   justifyContent="space-between"
   alignItems="center"
 >
-<Link to={'/register'}><Button variant="outlined">register</Button>
-</Link>
-
-
-<Link to={'/home'}>
-<Button variant="contained">login</Button></Link>
-
+<Button variant="contained">login</Button>
+<Link to={'/login'}>
+<Button variant="outlined">register</Button></Link>
     </Grid>
 
     
