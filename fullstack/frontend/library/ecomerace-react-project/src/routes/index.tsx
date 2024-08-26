@@ -5,6 +5,7 @@ import { CustomStyles } from "../components/styles/CustomStyles";
 import { UseStateHook } from "../hooks/UseStateHook";
 import { UseEffectHook } from "../hooks/UseEffectHook";
 import { Register } from "../pages/Register";
+import { NotesContainer } from "../components/Notes/NotesContainer";
 
 let allpages={
     path:'/',
@@ -32,7 +33,11 @@ Children:[
      <UseStateHook/>
      <UseEffectHook/>
     </>
-}
+},
+{
+    path:'notes',
+    Element:<NotesContainer/>
+},
 
 ]
 }
