@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do App</title>
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    }
+
+    .todo-container {
+      width: 300px;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    .todo-header {
+      font-size: 24px;
+      font-weight: bold;
+      background-color: #ff5f6d;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .todo-input-container {
+      display: flex;
+      margin: 20px 0;
+    }
+
+    #todo-input {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #add-todo-button {
+      font-size: 20px;
+      margin-left: 10px;
+      background-color: #ff5f6d;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #add-todo-button:hover {
+      background-color: #e2555c;
+    }
+
+    .todo-list {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .todo-list header {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    #todo-items {
+      list-style: none;
+      padding: 0;
+    }
+
+    .todo-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .todo-item button {
+      background-color: #ff5f6d;
+      color: white;
+      border: none;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .todo-item button:hover {
+      background-color: #e2555c;
+    }
+  </style>
+</head>
+<body>
+  <div class="todo-container">
+    <header class="todo-header">Todo App</header>
+    <div class="todo-input-container">
+      <input type="text" id="todo-input" placeholder="Add Todo" />
+      <button id="add-todo-button">+</button>
+    </div>
+    <div class="todo-list">
+      <header>TodoList</header>
+      <ul id="todo-items"></ul>
+    </div>
+  </div>
+
+  <script>
+   
+    document.getElementById("add-todo-button").addEventListener("click", function() {
+      const todoInput = document.getElementById("todo-input");
+      const todoValue = todoInput.value.trim();
+
+      if (todoValue) {
+      
+        const li = document.createElement("li");
+        li.className = "todo-item";
+
+       
+        const text = document.createElement("span");
+        text.textContent = todoValue;
+
+        
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "❌";
+        deleteButton.addEventListener("click", function() {
+          li.remove(); 
+        });
+
+        
+        li.appendChild(text);
+        li.appendChild(deleteButton);
+
+        document.getElementById("todo-items").appendChild(li);
+
+        todoInput.value = "";
+      }
+    });
+  </script>
+</body>
+</html>
