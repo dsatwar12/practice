@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    /* Basic Grid Container Styling */
+.grid-container {
+  display: grid;
+  gap: 16px; /* Space between grid items */
+  padding: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* auto-fit adjusts columns based on available space */
+}
+
+/* Grid Items */
+.grid-item {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: Additional Media Queries for Fine-Tuning */
+@media (max-width: 768px) {
+  .grid-container {
+    gap: 12px; /* Reduce spacing for smaller screens */
+  }
+
+  .grid-item {
+    font-size: 16px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* Single column for very small screens */
+  }
+
+  .grid-item {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+</body>
+</html>
